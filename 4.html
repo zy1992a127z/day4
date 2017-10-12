@@ -47,6 +47,7 @@
 			var lis = box.getElementsByTagName("li");
 			var wdh = lis[0].offsetWidth;
 			box.addEventListener("touchstart",function(ev){
+				ev.preventDefault();
 				var pos=ev.changedTouches[0].clientX;
 				var left = box.offsetLeft;
 				box.addEventListener("touchmove",function(ev){
