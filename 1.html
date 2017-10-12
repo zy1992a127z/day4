@@ -22,7 +22,7 @@
 	</body>
 	<script type="text/javascript">
 		var box = document.getElementById("box");
-		box.addEventListener("touchand",function(ev){
+		box.addEventListener("touchend",function(ev){
 			ev.preventDefault();
 			this.innerHTML = ev.changedTouches.length;
 		})
