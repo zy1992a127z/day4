@@ -25,7 +25,7 @@
 			var box = document.getElementById("box");
 			var lis = box.getElementsByTagName("li");
 			var xixi = new Hammer(box);
-			xixi.get("pinchin").set({ enable: true});
+			xixi.get('pinch').set({ enable: true });
 			var bl = 1;
 			xixi.on("pinchin",function(){
 				bl-=0.03;
