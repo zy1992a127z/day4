@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+		<script src="js/hammer.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/2.css"/>
+	</head>
+	<body>
+		<ul class="box" id="box">
+			<li>这是1</li>
+			<li>这是2</li>
+			<li>这是3</li>
+			<li>这是4</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		window.onload = function(){
+			var box = document.getElementById("box");
+			var hins = new Hammer(box);
+			var i = 0;
+			var flag = true;
+			hins.on("panleft",function(){
+				if(flag){
+					console.log(i);
+					if(i==3){
+						flag=false;
+						return;
+					}else{
+						i++;
+						box.style.webkitTransfrom = "translate3d(-"+i*25+"%,0,0)";
+						flag=false;
+						console.log(box.style.webkitTransfrom)
+					}
+					
+				}
+			})
+			hins.on("panright",function(){
+				if(flag){
+					console.log(i);
+					if(i==0){
+						flag=false;
+						return;
+					}
+					else{
+						i--;
+						box.style.webkitTransfrom = "translate3d(-"+i*25+"%,0,0)";
+						flag=false;
+					}
+				}
+			})
+			box.addEventListener("touchend",function(){
+				flag=true;
+			})
+		}
+		
+	</script>
+</html>
