@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				background: #999;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box"></div>
+	</body>
+	<script type="text/javascript">
+		var box = document.getElementById("box");
+		box.addEventListener("touchstart" function(ev){
+			ev.preventDefault();
+			this.innerHTML = ev.changedTouches.length;
+		})
+	</script>
+</html>
